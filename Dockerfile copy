@@ -1,0 +1,35 @@
+#FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
+FROM mcr.microsoft.com/dotnet/runtime:7.0 AS build-env
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        curl \
+        ca-certificates \
+        gnupg \
+        wget
+
+# Import the Microsoft GPG key and add the Microsoft package repository
+RUN wget https://packages.microsoft.com/config/debian/11/packages-microsoft-prod.deb \
+    && dpkg -i packages-microsoft-prod.deb \
+    && rm packages-microsoft-prod.deb \
+    && apt-get update
+
+# Install the .NET SDK 6.0
+RUN apt-get install -y --no-install-recommends \
+        dotnet-sdk-6.0
+
+
+WORKDIR /App
+
+# Copy everything
+COPY . ./
+# Restore as distinct layers
+RUN dotnet restore
+# Build and publish a release
+RUN dotnet publish -c Release -o out
+
+# Build runtime image
+FROM mcr.microsoft.com/dotnet/aspnet:7.0
+WORKDIR /App
+COPY --from=build-env /App/out .
+ENTRYPOINT ["dotnet", "unwallet.dll"]

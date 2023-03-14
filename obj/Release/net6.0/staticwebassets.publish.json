@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "SSZSrfa90H+qKVwx16b1LpdEtMf2O46IfX3UWG7068g=",
+  "Source": "unwallet",
+  "BasePath": "_content/unwallet",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
