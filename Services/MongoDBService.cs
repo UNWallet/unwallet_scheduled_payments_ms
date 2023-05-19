@@ -2,6 +2,7 @@ using unwallet.Models;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
 
 namespace unwallet.Services;
 
@@ -27,6 +28,9 @@ public class MongoDBService{
     }    
 
     public async Task<ScheduledPayment> CreateAsync(ScheduledPayment scheduledPayment){
+        //var document = scheduledPayment.ToBsonDocument();
+        //var convertedDoc = BsonSerializer.Deserialize<ScheduledPayment>(document);
+        //if(_scheduledPaymentCollection is not null) await _scheduledPaymentCollection.InsertOneAsync(convertedDoc);
         if(_scheduledPaymentCollection is not null) await _scheduledPaymentCollection.InsertOneAsync(scheduledPayment);
         return scheduledPayment;
     }

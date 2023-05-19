@@ -905,11 +905,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/lorenzzo/swarch2023/unwallet/unwallet/unwallet.csproj",
+      "projectUniqueName": "/home/lorenzzo/swarch2023/unwallet/unwallet_scheduled_payments_ms/unwallet.csproj",
       "projectName": "unwallet",
-      "projectPath": "/home/lorenzzo/swarch2023/unwallet/unwallet/unwallet.csproj",
+      "projectPath": "/home/lorenzzo/swarch2023/unwallet/unwallet_scheduled_payments_ms/unwallet.csproj",
       "packagesPath": "/home/lorenzzo/.nuget/packages/",
-      "outputPath": "/home/lorenzzo/swarch2023/unwallet/unwallet/obj/",
+      "outputPath": "/home/lorenzzo/swarch2023/unwallet/unwallet_scheduled_payments_ms/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/lorenzzo/.nuget/NuGet/NuGet.Config"

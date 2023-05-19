@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PlwRqvGDiCBMWVi2HAoUqU6i3vh1dnee9AQFzt5aSkKkWTEExzbolQc32NaRQrRH/U9FPJdjFj3Z526Is5CpAQ==",
+  "dgSpecHash": "65l1cMdD4a1iCI7wPVscf+J8UMpmjubUULNhxJXnA3blWtxaNlpAWcUUPFM6vxLBjNVYmfCeDQIJbvl1atnmUQ==",
   "success": true,
-  "projectFilePath": "/home/lorenzzo/swarch2023/unwallet/unwallet/unwallet.csproj",
+  "projectFilePath": "/home/lorenzzo/swarch2023/unwallet/unwallet_scheduled_payments_ms/unwallet.csproj",
   "expectedPackageFiles": [
     "/home/lorenzzo/.nuget/packages/awssdk.core/3.7.100.14/awssdk.core.3.7.100.14.nupkg.sha512",
     "/home/lorenzzo/.nuget/packages/awssdk.securitytoken/3.7.100.14/awssdk.securitytoken.3.7.100.14.nupkg.sha512",

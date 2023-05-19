@@ -8,7 +8,8 @@ using MongoDB.Bson;
 namespace unwallet.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
+    //[Route("api/[controller]")]
     public class ScheduledPaymentController : ControllerBase
     {
         private readonly MongoDBService _mongoDBService;
@@ -19,7 +20,7 @@ namespace unwallet.Controllers
 
 
         [HttpGet]
-        [Route("list")]
+        //[Route("list")]
         public async Task<List<ScheduledPayment>> GetScheduledPayments()
         {
             return await _mongoDBService.GetAsync();
@@ -27,7 +28,7 @@ namespace unwallet.Controllers
 
         [NonAction]
         [HttpGet("{id}", Name="GetById")]
-        [Route("list")]
+        //[Route("list")]
         public async Task<ActionResult<ScheduledPayment>> GetScheduledPaymentById(string _id)
         {
             var payment = await _mongoDBService.GetByIdAsync(_id);
@@ -44,7 +45,9 @@ namespace unwallet.Controllers
         {
             scheduledPayment._id = ObjectId.GenerateNewId().ToString();
             await _mongoDBService.CreateAsync(scheduledPayment);
-            return CreatedAtRoute("GetById", new { id = scheduledPayment._id}, scheduledPayment);
+            var response = await _mongoDBService.GetByIdAsync(scheduledPayment._id);
+            return Ok(response);
+            //return CreatedAtRoute("GetById", new { id = scheduledPayment._id}, scheduledPayment);
         }
 
         [HttpPut("{id}")]
